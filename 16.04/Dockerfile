@@ -1,5 +1,5 @@
 FROM       ubuntu:16.04
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+MAINTAINER Seth0r "https://github.com/seth0r"
 
 RUN apt-get update
 
@@ -15,6 +15,11 @@ RUN mkdir /root/.ssh
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN mv /etc/passwd /config/passwd ; ln -s /config/passwd /etc/passwd
+RUN mv /etc/shadow /config/shadow ; ln -s /config/shadow /etc/shadow
+
+VOLUME ["/config"]
 
 EXPOSE 22
 
