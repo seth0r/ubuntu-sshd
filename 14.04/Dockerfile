@@ -21,6 +21,8 @@ RUN mkdir /config
 
 COPY files/run.sh /usr/local/sbin/run.sh
 RUN chmod +x /usr/local/sbin/run.sh
+RUN cp /etc/passwd /etc/passwd.init
+RUN cp /etc/shadow /etc/shadow.init
 
 EXPOSE 22
 
