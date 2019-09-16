@@ -19,8 +19,8 @@ RUN apt-get clean && \
 RUN mkdir /config
 VOLUME ["/config"]
 
-RUN mv /etc/passwd /config/passwd ; ln -s /config/passwd /etc/passwd
-RUN mv /etc/shadow /config/shadow ; ln -s /config/shadow /etc/shadow
+#RUN mv /etc/passwd /config/passwd ; ln -s /config/passwd /etc/passwd
+#RUN mv /etc/shadow /config/shadow ; ln -s /config/shadow /etc/shadow
 
 EXPOSE 22
 
