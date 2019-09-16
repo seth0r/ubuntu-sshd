@@ -20,6 +20,7 @@ RUN apt-get clean && \
 RUN mkdir /config
 
 COPY files/run.sh /usr/local/sbin/run.sh
+RUN chmod +x /usr/local/sbin/run.sh
 
 EXPOSE 22
 
