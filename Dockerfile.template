@@ -17,10 +17,11 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /config
-VOLUME ["/config"]
 
-#RUN mv /etc/passwd /config/passwd ; ln -s /config/passwd /etc/passwd
-#RUN mv /etc/shadow /config/shadow ; ln -s /config/shadow /etc/shadow
+RUN cp /etc/passwd /config/passwd
+RUN cp /etc/shadow /config/shadow
+
+VOLUME ["/config"]
 
 EXPOSE 22
 
