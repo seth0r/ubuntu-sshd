@@ -4,18 +4,18 @@ if [ ! -f /etc/passwd ]; then
 fi
 apt-get update
 apt-get dist-upgrade -y
-if [ -f /config/install ]; then
-    cat /config/install | while read p; do
+if [ -f /etc/apt.install ]; then
+    cat /etc/apt.install | while read p; do
         apt-get install -y "$p"
     done
 fi
-if [ -f /config/remove ]; then
-    cat /config/remove | while read p; do
+if [ -f /etc/apt.remove ]; then
+    cat /etc/apt.remove | while read p; do
         apt-get remove -y "$p"
     done
 fi
 apt-get autoremove -y
-if [ -f /config/run.sh ]; then
-    bash /config/run.sh
+if [ -f /etc/run.sh ]; then
+    bash /etc/run.sh
 fi
 /usr/sbin/sshd -D
