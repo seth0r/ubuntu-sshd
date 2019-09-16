@@ -1,16 +1,7 @@
 #!/bin/bash
-for f in passwd shadow group ssh; do
-    if [ ! -f /config/$f.init ]; then
-        cp -av /etc/$f /etc/$f.init
-    fi
-    if [ ! -f /config/$f ]; then
-        cp -av /etc/$f.init /config/$f
-    fi
-    if [ ! -L /etc/$f ]; then
-        rm -rf /etc/$f
-        ln -s /config/$f /etc/$f
-    fi
-done
+if [ ! -f /etc/passwd ]; then
+    cp -av /etc.init/* /etc/
+fi
 apt-get update
 apt-get dist-upgrade -y
 if [ -f /config/install ]; then
