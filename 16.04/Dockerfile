@@ -2,6 +2,7 @@ FROM       ubuntu:16.04
 MAINTAINER Seth0r "https://github.com/seth0r"
 
 RUN apt-get update
+RUN apt-get dist-upgrade -y
 
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
@@ -18,11 +19,8 @@ RUN apt-get clean && \
 
 RUN mkdir /config
 
-RUN cp /etc/passwd /config/passwd
-RUN cp /etc/shadow /config/shadow
-
-VOLUME ["/config"]
+COPY files/run.sh /usr/local/sbin/run.sh
 
 EXPOSE 22
 
-CMD    ["/usr/sbin/sshd", "-D"]
+CMD    ["/usr/local/sbin/run.sh"]
