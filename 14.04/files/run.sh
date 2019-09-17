@@ -1,12 +1,12 @@
 #!/bin/bash
 if [ ! -f /etc/passwd ]; then
-    rsync -av /init/etc /etc
+    rsync -av /init/etc/ /etc/
 fi
 if [ ! -d /var/lib ]; then
-    rsync -av /init/var /var
+    rsync -av /init/var/ /var/
 fi
 if [ ! -d /root/.profile ]; then
-    rsync -av /init/root /root
+    rsync -av /init/root/ /root/
 fi
 apt-get update
 apt-get dist-upgrade -y
