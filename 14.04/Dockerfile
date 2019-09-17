@@ -17,7 +17,10 @@ RUN mkdir /root/.ssh
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN cp -av /etc /etc.init
+RUN mkdir /init
+RUN cp -avl /etc /init/etc
+RUN cp -avl /var /init/var
+RUN cp -avl /root /init/root
 
 COPY files/run.sh /usr/local/sbin/run.sh
 RUN chmod +x /usr/local/sbin/run.sh

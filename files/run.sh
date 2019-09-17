@@ -1,6 +1,9 @@
 #!/bin/bash
 if [ ! -f /etc/passwd ]; then
-    cp -av /etc.init/* /etc/
+    cp -av /init/etc/* /etc/
+fi
+if [ ! -d /var/lib ]; then
+    cp -av /init/var/* /var/
 fi
 apt-get update
 apt-get dist-upgrade -y
