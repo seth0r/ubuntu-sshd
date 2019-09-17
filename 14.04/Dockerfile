@@ -19,7 +19,6 @@ RUN apt-get clean && \
 
 RUN mkdir /init
 RUN cp -av /etc /init/etc
-RUN cp -av /var /init/var
 RUN cp -av /root /init/root
 
 COPY files/run.sh /usr/local/sbin/run.sh

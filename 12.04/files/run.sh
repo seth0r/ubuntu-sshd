@@ -2,9 +2,6 @@
 if [ ! -f /etc/passwd ]; then
     rsync -av /init/etc/ /etc/
 fi
-if [ ! -d /var/lib ]; then
-    rsync -av /init/var/ /var/
-fi
 if [ ! -d /root/.profile ]; then
     rsync -av /init/root/ /root/
 fi
