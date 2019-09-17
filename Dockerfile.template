@@ -4,7 +4,7 @@ MAINTAINER Seth0r "https://github.com/seth0r"
 RUN apt-get update
 RUN apt-get dist-upgrade -y
 
-RUN apt-get install -y openssh-server
+RUN apt-get install -y openssh-server rsync
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
