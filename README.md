@@ -28,6 +28,15 @@ Config:
   - exposed port 22
   - default command: `/usr/sbin/sshd -D`
   - root password: `root`
+  
+Persistence:
+  - /home, /etc and /root can be external volumes
+  - if /etc/passwd does not exist, initial contents from image are copied
+  - if /root/.profile does not exist, initial contens from image are copied
+  - all packages are upgraded at each container startup
+  - packages listed in /etc/apt.install will be installed
+  - packages listed in /etc/apt.remove will be removed
+  - /etc/run.sh is executed at container start, if it exists
 
 ## Run example
 
