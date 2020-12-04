@@ -17,6 +17,7 @@ Base:
 - [Trusty (14.04) minimal](http://packages.ubuntu.com/trusty/ubuntu-minimal)
 - [Xenial (16.04) minimal](http://packages.ubuntu.com/xenial/ubuntu-minimal)
 - [Bionic (18.04) minimal](http://packages.ubuntu.com/bionic/ubuntu-minimal)
+- [Focal (20.04) minimal](http://packages.ubuntu.com/bionic/ubuntu-minimal)
 
 Image specific:
 - [openssh-server](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring)
