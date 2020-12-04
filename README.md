@@ -5,9 +5,6 @@ Dockerized SSH service, built on top of [official Ubuntu](https://registry.hub.d
 ## Image tags
 
 - rastasheep/ubuntu-sshd:12.04 (precise)
-- rastasheep/ubuntu-sshd:12.10 (quantal)
-- rastasheep/ubuntu-sshd:13.04 (raring)
-- rastasheep/ubuntu-sshd:13.10 (saucy)
 - rastasheep/ubuntu-sshd:14.04 (trusty)
 - rastasheep/ubuntu-sshd:16.04 (xenial)
 - rastasheep/ubuntu-sshd:18.04 (bionic)
@@ -17,9 +14,6 @@ Dockerized SSH service, built on top of [official Ubuntu](https://registry.hub.d
 Base:
 
 - [Precise (12.04) minimal](http://packages.ubuntu.com/precise/ubuntu-minimal)
-- [Quantal (12.10) minimal](http://packages.ubuntu.com/quantal/ubuntu-minimal)
-- [Raring (13.04) minimal](http://packages.ubuntu.com/raring/ubuntu-minimal)
-- [Saucy (13.10) minimal](http://packages.ubuntu.com/saucy/ubuntu-minimal)
 - [Trusty (14.04) minimal](http://packages.ubuntu.com/trusty/ubuntu-minimal)
 - [Xenial (16.04) minimal](http://packages.ubuntu.com/xenial/ubuntu-minimal)
 - [Bionic (18.04) minimal](http://packages.ubuntu.com/bionic/ubuntu-minimal)
@@ -34,6 +28,15 @@ Config:
   - exposed port 22
   - default command: `/usr/sbin/sshd -D`
   - root password: `root`
+  
+Persistence:
+  - /home, /etc and /root can be external volumes
+  - if /etc/passwd does not exist, initial contents from image are copied
+  - if /root/.profile does not exist, initial contens from image are copied
+  - all packages are upgraded at each container startup
+  - packages listed in /etc/apt.install will be installed
+  - packages listed in /etc/apt.remove will be removed
+  - /etc/run.sh is executed at container start, if it exists
 
 ## Run example
 
