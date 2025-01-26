@@ -1,4 +1,4 @@
-FROM       ubuntu:14.04
+FROM       ubuntu:22.04
 MAINTAINER Seth0r "https://github.com/seth0r"
 
 RUN apt-get update
