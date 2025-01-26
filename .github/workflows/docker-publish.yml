@@ -41,31 +41,3 @@ jobs:
           push: true
           tags: |
             ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:20.04,${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
-
-      - name: Build and Push 18.04
-        uses: docker/build-push-action@v2
-        with:
-          context: ./18.04
-          platforms: linux/amd64, linux/arm64
-          push: true
-          tags: |
-            ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:18.04
-
-      - name: Build and Push 16.04
-        uses: docker/build-push-action@v2
-        with:
-          context: ./16.04
-          platforms: linux/amd64, linux/arm64
-          push: true
-          tags: |
-            ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:16.04
-
-      - name: Build and Push 14.04
-        uses: docker/build-push-action@v2
-        with:
-          context: ./14.04
-          platforms: linux/amd64, linux/arm64
-          push: true
-          tags: |
-            ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:14.04
-
